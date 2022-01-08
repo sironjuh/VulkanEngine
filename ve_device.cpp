@@ -54,7 +54,7 @@ namespace ve
   }
 
   // class member functions
-  VEDevice::VEDevice(VEWindow &window) : window{window}
+  VEDevice::VEDevice(VEWindow &window) : window(window)
   {
     createInstance();
     setupDebugMessenger();
@@ -87,7 +87,7 @@ namespace ve
 
     VkApplicationInfo appInfo = {};
     appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-    appInfo.pApplicationName = "LittleVulkanEngine App";
+    appInfo.pApplicationName = "VulkanEngine App";
     appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
     appInfo.pEngineName = "No Engine";
     appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
@@ -182,8 +182,16 @@ namespace ve
     createInfo.pQueueCreateInfos = queueCreateInfos.data();
 
     createInfo.pEnabledFeatures = &deviceFeatures;
+
+    std::cout << "enabled features: " << deviceExtensions.data() << "\n";
+
     createInfo.enabledExtensionCount = static_cast<uint32_t>(deviceExtensions.size());
     createInfo.ppEnabledExtensionNames = deviceExtensions.data();
+
+    // Hacky way to get the device extensions
+    //const char* deviceExtension = "VK_KHR_portability_subset";
+    //createInfo.enabledExtensionCount = 1;
+    //createInfo.ppEnabledExtensionNames = &deviceExtension;
 
     // might not really be necessary anymore because device specific validation layers
     // have been deprecated
@@ -312,6 +320,9 @@ namespace ve
     {
       extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
     }
+
+    // Juhis: Hacky way to add the required instance extension
+    extensions.push_back("VK_KHR_get_physical_device_properties2");
 
     return extensions;
   }
