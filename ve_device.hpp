@@ -82,7 +82,7 @@ namespace ve
     void createLogicalDevice();
     void createCommandPool();
 
-    // helper functions
+    // Helpers
     bool isDeviceSuitable(VkPhysicalDevice device);
     std::vector<const char *> getRequiredExtensions();
     bool checkValidationLayerSupport();
@@ -103,7 +103,9 @@ namespace ve
     VkQueue graphicsQueue_;
     VkQueue presentQueue_;
 
+    // Hacky fix to make it work on mac
     const char* deviceExtension = "VK_KHR_portability_subset";
+
     const std::vector<const char *> validationLayers = {"VK_LAYER_KHRONOS_validation"};
     const std::vector<const char *> deviceExtensions = { {VK_KHR_SWAPCHAIN_EXTENSION_NAME}, deviceExtension };
   };

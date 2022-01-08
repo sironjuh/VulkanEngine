@@ -183,15 +183,8 @@ namespace ve
 
     createInfo.pEnabledFeatures = &deviceFeatures;
 
-    std::cout << "enabled features: " << deviceExtensions.data() << "\n";
-
     createInfo.enabledExtensionCount = static_cast<uint32_t>(deviceExtensions.size());
     createInfo.ppEnabledExtensionNames = deviceExtensions.data();
-
-    // Hacky way to get the device extensions
-    //const char* deviceExtension = "VK_KHR_portability_subset";
-    //createInfo.enabledExtensionCount = 1;
-    //createInfo.ppEnabledExtensionNames = &deviceExtension;
 
     // might not really be necessary anymore because device specific validation layers
     // have been deprecated
@@ -321,7 +314,7 @@ namespace ve
       extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
     }
 
-    // Juhis: Hacky way to add the required instance extension
+    // Hacky fix to make it work on mac
     extensions.push_back("VK_KHR_get_physical_device_properties2");
 
     return extensions;

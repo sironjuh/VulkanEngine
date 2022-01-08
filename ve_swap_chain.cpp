@@ -50,7 +50,7 @@ namespace ve
 
     vkDestroyRenderPass(device.device(), renderPass, nullptr);
 
-    // cleanup synchronization objects
+    // Cleanup synchronization objects
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++)
     {
       vkDestroySemaphore(device.device(), renderFinishedSemaphores[i], nullptr);
