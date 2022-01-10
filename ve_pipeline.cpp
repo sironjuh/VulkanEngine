@@ -14,7 +14,7 @@ namespace ve
       const std::string &vertFilepath,
       const std::string &fragFilepath,
       const PipelineConfigInfo &configInfo)
-      : veDevice{device}
+      : veDevice(device)
   {
     createGraphicsPipeline(vertFilepath, fragFilepath, configInfo);
   }
@@ -28,7 +28,7 @@ namespace ve
 
   std::vector<char> VEPipeline::readFile(const std::string &filepath)
   {
-    std::ifstream file{filepath, std::ios::ate | std::ios::binary};
+    std::ifstream file(filepath, std::ios::ate | std::ios::binary);
 
     if (!file.is_open())
     {
@@ -151,7 +151,7 @@ namespace ve
     PipelineConfigInfo configInfo{};
 
     configInfo.inputAssemblyInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
-    configInfo.inputAssemblyInfo.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
+    configInfo.inputAssemblyInfo.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_STRIP; // VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
     configInfo.inputAssemblyInfo.primitiveRestartEnable = VK_FALSE;
 
     configInfo.viewport.x = 0.0f;

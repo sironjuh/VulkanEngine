@@ -35,7 +35,6 @@ namespace ve
     VEDevice(VEWindow &window);
     ~VEDevice();
 
-    // Not copyable or movable
     VEDevice(const VEDevice &) = delete;
     void operator=(const VEDevice &) = delete;
     VEDevice(VEDevice &&) = delete;
@@ -53,7 +52,6 @@ namespace ve
     VkFormat findSupportedFormat(
         const std::vector<VkFormat> &candidates, VkImageTiling tiling, VkFormatFeatureFlags features);
 
-    // Buffer Helper Functions
     void createBuffer(
         VkDeviceSize size,
         VkBufferUsageFlags usage,
@@ -82,7 +80,6 @@ namespace ve
     void createLogicalDevice();
     void createCommandPool();
 
-    // Helpers
     bool isDeviceSuitable(VkPhysicalDevice device);
     std::vector<const char *> getRequiredExtensions();
     bool checkValidationLayerSupport();
