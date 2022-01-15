@@ -1,6 +1,8 @@
 #version 450
 
+layout (location = 0) in vec4 fragColor;
 layout (location = 0) out vec4 outColor;
+
 in vec4 gl_FragCoord;
 
 vec2 u_resolution = vec2(1600, 1200);
@@ -93,5 +95,6 @@ void main() {
         color = vec3(normal);
     }
 
-    outColor = vec4(color, 1.);
+    //outColor = vec4(color, 1.);
+    outColor = fragColor;
 }

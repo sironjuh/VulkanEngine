@@ -54,10 +54,10 @@ namespace ve
   void VulkanEngine::loadModels()
   {
     std::vector<VEModel::Vertex> vertices{
-        {{ 1.0f,  1.0f}},
-        {{-1.0f,  1.0f}},
-        {{ 1.0f, -1.0f}},
-        {{-1.0f, -1.0f}}};
+        {{ 1.0f,  1.0f}, {1.0f, 0.0f, 0.0f, 1.0f}},
+        {{-1.0f,  1.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
+        {{ 1.0f, -1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}},
+        {{-1.0f, -1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}}};
         
     //std::vector<VEModel::Vertex> vertices{};
     //sierpinski(vertices, 5, {-0.5f, 0.5f}, {0.5f, 0.5f}, {0.0f, -0.5f});
