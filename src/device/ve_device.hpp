@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ve_window.hpp"
+#include "window/ve_window.hpp"
 
 #include <string>
 #include <vector>

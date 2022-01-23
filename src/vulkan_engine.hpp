@@ -1,10 +1,10 @@
 #pragma once
 
-#include "ve_device.hpp"
-#include "ve_pipeline.hpp"
-#include "ve_swap_chain.hpp"
-#include "ve_window.hpp"
-#include "ve_model.hpp"
+#include "device/ve_device.hpp"
+#include "pipeline/ve_pipeline.hpp"
+#include "swapchain/ve_swap_chain.hpp"
+#include "window/ve_window.hpp"
+#include "model/ve_model.hpp"
 
 #include <memory>
 #include <vector>
