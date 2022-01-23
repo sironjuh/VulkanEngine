@@ -95,6 +95,6 @@ void main() {
         color = vec3(normal);
     }
 
-    //outColor = vec4(color, 1.);
-    outColor = fragColor;
+    outColor = vec4(color, 1.);
+    //outColor = fragColor;
 }
