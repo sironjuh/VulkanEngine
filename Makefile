@@ -1,5 +1,11 @@
-CFLAGS = -std=c++17 -I. -I$(VULKAN_SDK)/include -I/usr/local/include
+INCFLAGS  = -I./src
+INCFLAGS += -I$(VULKAN_SDK)/include
+INCFLAGS += -I/usr/local/include
+
+CFLAGS  = -std=c++17
+CFLAGS += $(INCFLAGS)
+
 LDFLAGS = -L$(VULKAN_SDK)/lib `pkg-config --static --libs glfw3` -lvulkan
 
-a.out: *.cpp *.hpp
-	g++-11 $(CFLAGS) -o a.out *.cpp $(LDFLAGS)
+ve: src/*.cpp src/*.hpp
+	g++-11 $(CFLAGS) -o ve src/*.cpp $(LDFLAGS)
