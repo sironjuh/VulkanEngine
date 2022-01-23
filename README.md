@@ -17,7 +17,7 @@ brew install glfw
 brew install glm
 ```
 
-MacOS by default is using `clang` compiler, and `gcc` and `g++` are just aliases for `clang`. To switch to `gcc`
+MacOS by default is using `clang` compiler. To switch to `gcc`
 
 ```
 brew install gcc
@@ -26,9 +26,9 @@ brew install gcc
 And use `g++-11` to compile with `gcc` instead.
 
 ### Building
-Once you  havve everything installed (be sure you have VULKAN_SDK environment variable set), using the privded makefifile
+Once you have everything installed (be sure you have VULKAN_SDK environment variable set), using the provided makefile
 
 ```
 make
-./a.out
+./ve
 ```

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ve_device.hpp"
+#include "device/ve_device.hpp"
 
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE

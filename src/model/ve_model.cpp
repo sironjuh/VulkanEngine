@@ -1,4 +1,4 @@
-#include "ve_model.hpp"
+#include "model/ve_model.hpp"
 
 #include <cassert>
 #include <cstring>

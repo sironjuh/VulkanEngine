@@ -5,10 +5,10 @@
 #include <stdexcept>
 
 int main() {
-    ve::VulkanEngine app;
+    ve::VulkanEngine engine;
 
     try {
-        app.run();
+        engine.run();
     } catch (const std::exception &e) {
         std::cerr << e.what() << std::endl;
         return EXIT_FAILURE;
