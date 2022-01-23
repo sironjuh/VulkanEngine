@@ -17,7 +17,7 @@ namespace ve
     ~VESwapChain();
 
     VESwapChain(const VESwapChain &) = delete;
-    void operator=(const VESwapChain &) = delete;
+    VESwapChain &operator=(const VESwapChain &) = delete;
 
     VkFramebuffer getFrameBuffer(int index) { return swapChainFramebuffers[index]; }
     VkRenderPass getRenderPass() { return renderPass; }
